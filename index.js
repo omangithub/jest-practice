@@ -74,4 +74,20 @@ export function caesarCipher (string, shiftFactor) {
    return alphabetIndex
 }
 
-console.log(caesarCipher("aVHc", 15))
+export function analyzeArray (arr) {
+  
+  let sortedArr = arr.sort((a,b)=>a-b);
+  let average = arr.reduce((accumulator, currentValue)=>accumulator+currentValue,0)/arr.length;
+  let min = sortedArr[0];
+  let max = sortedArr[arr.length-1];
+  let length = arr.length;
+
+  return {
+    average: average,
+    min: min,
+    max: max,
+    length: length
+  }
+}
+
+console.log(analyzeArray([1,8,3,4,2,6]))

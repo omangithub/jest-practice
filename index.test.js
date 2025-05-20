@@ -1,4 +1,4 @@
-import { capitalize, reverseString, calculator, caesarCipher } from "./index.js";
+import { capitalize, reverseString, calculator, caesarCipher, analyzeArray } from "./index.js";
 
 test('takes a string and returns first letter capitalized', () => {
   expect(capitalize("my string")).toBe("My string");
@@ -18,4 +18,13 @@ test('a calculator with add, subtract, divide and multiply', () => {
 test('convert a string using a Caeser cipher', ()=> {
   expect(caesarCipher('HeLLo', 3)).toBe('KhOOr');
   expect(caesarCipher('Hello, World!', 3)).toBe('Khoor, Zruog!')
+})
+
+test('takes an array and returns an object with average, min, max, and length', ()=> {
+  const expectedObject = { 
+    average: 4,
+    min: 1,
+    max: 8,
+    length: 6 };
+  expect(JSON.stringify(analyzeArray([1,8,3,4,2,6]))).toBe(JSON.stringify(expectedObject));
 })
